@@ -1,5 +1,4 @@
 #Drone CI File
-
 kind: pipeline
 type: kubernetes
 name: default
@@ -11,11 +10,11 @@ steps:
   commands:
     - "go build -o ./myapp"
     
-- name: build-image  
+- name: publish  
   image: plugins/docker
-      environment:
-      TOKEN:
-        from_secret: scanner_token
+  environment:
+    TOKEN:
+      from_secret: scanner_token
   settings:
     username:
       from_secret: docker_username
