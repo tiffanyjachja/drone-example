@@ -22,5 +22,7 @@ steps:
     password:
       from_secret: docker_password
     repo: tiffanyjachja/drone-example
+    build_args_from_env:
+      - TOKEN
     auto_tag: true
     auto_tag_suffix: drone-build
