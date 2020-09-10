@@ -9,4 +9,4 @@ FROM alpine:3.7.3
 
 RUN apk add curl \
     && curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/master/contrib/install.sh | sh -s -- -b /usr/local/bin \
-    && trivy filesystem --exit-code 1 --no-progress /
+    && trivy image --exit-code 1 --severity CRITICAL /
